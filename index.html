@@ -15,27 +15,61 @@
   </head>
   <body>
     <header class="container flex">
-      <nav class="planets flex"></nav>
+      <h3>The planets</h3>
+      <nav class="nav flex">
+        <ul class="nav__list">
+          <li><a href="#" class="nav__link">Mercury</a></li>
+          <li><a href="#" class="nav__link">Venus</a></li>
+          <li><a href="#" class="nav__link">Earth</a></li>
+          <li><a href="#" class="nav__link">Mars</a></li>
+          <li><a href="#" class="nav__link">Jupiter</a></li>
+          <li><a href="#" class="nav__link">Saturn</a></li>
+          <li><a href="#" class="nav__link">Uranus</a></li>
+          <li><a href="#" class="nav__link">Neptune</a></li>
+        </ul>
+      </nav>
     </header>
 
-    <main>
-      <div class="container flex">
-        <div id="image"><img src="" alt="" /></div>
-        <section id="main-info">
-          <div class="main-text"></div>
-          <div class="buttons"></div>
+    <main class="container">
+      <div class="flex">
+        <div id="image"><img class="main__image" /></div>
+        <section class="main-info">
+          <div class="section__info--text">
+            <h1 class="section__info--title"></h1>
+            <p class="section__info--text_content"></p>
+            <p class="section__info--source">
+              Source:<a class="section__info--text_source">Wikipedia</a
+              ><img src="./assets/icon-source.svg" alt="Icon" />
+            </p>
+          </div>
+          <div class="section__info--buttons">
+            <button class="overview">Overview</button>
+            <button class="internal">Internal Structure</button>
+            <button class="surface">Surface Geology</button>
+          </div>
         </section>
       </div>
-      <section id="additional-info">
-        <a href=""></a>
-        <a href=""></a>
-        <a href=""></a>
-        <a href=""></a>
+      <section class="additional-info flex">
+        <div class="additional-info__element">
+          <h6 class="rotation_title">Rotation Time</h6>
+          <p class="rotation_text"></p>
+        </div>
+        <div class="additional-info__element">
+          <h6 class="revolution_title">Revolution Time</h6>
+          <p class="revolution_text"></p>
+        </div>
+        <div class="additional-info__element">
+          <h6 class="radius_title">Radius</h6>
+          <p class="radius_text"></p>
+        </div>
+        <div class="additional-info__element">
+          <h6 class="temperature_title">Average Temp.</h6>
+          <p class="temperature_text"></p>
+        </div>
       </section>
     </main>
 
     <script src="https://unpkg.com/axios@1.1.2/dist/axios.min.js"></script>
-    <script type="text/javascript" src="data.json"></script>
     <script src="./app.js"></script>
   </body>
 </html>
