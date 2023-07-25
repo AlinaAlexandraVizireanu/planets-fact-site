@@ -1,4 +1,4 @@
-const mainImage = document.querySelector(".main__image");
+const mainImage = document.querySelector(".main-image");
 const mainTitle = document.querySelector(".section__info--title");
 const mainText = document.querySelector(".section__info--text_content");
 const source = document.querySelector(".section__info--text_source");
