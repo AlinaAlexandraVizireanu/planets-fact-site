@@ -1,0 +1,180 @@
+@import url("https://fonts.googleapis.com/css2?family=Antonio:wght@500&family=League+Spartan:wght@400;700&display=swap");
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  background-color: #070724;
+  background-image: url("./assets/background-stars.svg");
+  color: #fff;
+  font-family: "League Spartan", sans-serif;
+  font-weight: 500;
+  font-size: 0.875rem;
+}
+
+h1,
+h2,
+h4 {
+  margin: 0;
+}
+
+img {
+  max-width: 100%;
+}
+
+.flex {
+  display: flex;
+}
+
+/* ---------------Header part design---------------*/
+
+header {
+  border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.header__content {
+  margin: 1.57em 2.92em 1.92em 2.28em;
+  justify-content: space-between;
+}
+
+.header__title {
+  font-family: "Antonio", sans-serif;
+  font-weight: 400;
+  font-size: 1.75rem;
+  text-transform: uppercase;
+  margin: 0;
+}
+
+.nav {
+  align-self: center;
+}
+
+.nav__list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  gap: 33px;
+}
+
+.nav__link {
+  text-decoration: none;
+  opacity: 0.75;
+  color: #fff;
+  text-transform: uppercase;
+}
+
+/* ---------------Main part design---------------*/
+
+.container {
+  width: 85%;
+  min-height: 85vh;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.primary_section {
+  justify-content: space-between;
+  margin: auto 0;
+}
+
+.main-info {
+  flex-basis: 40%;
+  min-height: 400px;
+  max-width: 350px;
+}
+
+.image-container {
+  margin: 0 auto;
+  align-self: center;
+}
+
+.section__info--title {
+  font-family: "Antonio", sans-serif;
+  font-size: 5rem;
+  text-transform: uppercase;
+}
+
+.section__info--text_content {
+  line-height: 25px;
+  margin-top: 1.642em;
+  margin-bottom: 1.714em;
+}
+
+.section__info--source {
+  margin-top: 0;
+  margin-bottom: 2.785em;
+  opacity: 0.5;
+  font-weight: 700;
+  line-height: 25px;
+  letter-spacing: 1.3px;
+  display: flex;
+}
+
+.section__info--text_source {
+  color: #fff;
+  text-decoration-line: underline;
+}
+
+img.icon-source {
+  align-self: center;
+  margin-left: 0.57em;
+}
+
+.section__info--buttons {
+  font-size: 0.75rem;
+  flex-direction: column;
+  letter-spacing: 2.571px;
+  text-transform: uppercase;
+}
+
+.button_text {
+  margin-left: 2.33em;
+}
+
+.number {
+  opacity: 0.5;
+  margin-left: 2.33em;
+}
+
+.overview,
+.internal,
+.surface {
+  border: 1px solid rgba(255, 255, 255, 0.3);
+}
+
+.overview,
+.internal {
+  margin-bottom: 1.33em;
+}
+
+.secondary_section {
+  justify-content: space-between;
+}
+
+.additional-info__element {
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  padding: 1.428em auto 1.92em 1.642em;
+  padding-top: 1.428em;
+  padding-bottom: 1.92em;
+  padding-left: 1.642em;
+  min-width: 255px;
+}
+
+.additional-info__element h4 {
+  font-size: 0.688rem;
+  line-height: 25px;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  opacity: 0.5;
+}
+
+.additional-info__element p {
+  font-family: "Antonio", sans-serif;
+  font-size: 2.5rem;
+  text-transform: uppercase;
+  margin: 0;
+}
