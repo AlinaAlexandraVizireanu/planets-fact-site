@@ -281,7 +281,6 @@ img.icon-source {
 
 .additional-info__element {
   border: 1px solid rgba(255, 255, 255, 0.3);
-  padding: 1.428em auto 1.92em 1.642em;
   padding-top: 1.428em;
   padding-bottom: 1.92em;
   padding-left: 1.642em;
@@ -302,4 +301,139 @@ img.icon-source {
   font-size: 2.5rem;
   text-transform: uppercase;
   margin: 0;
+}
+
+@media (max-width: 955px) {
+  /* ---------------Header part design---------------*/
+
+  .header__content {
+    flex-direction: column;
+  }
+
+  .header__title {
+    align-self: center;
+    margin-bottom: 1.14em;
+  }
+
+  .mercury-focus {
+    border: none;
+    color: var(--mercury-color);
+    padding: 0;
+  }
+
+  .venus-focus {
+    border: none;
+    color: var(--venus-color);
+    padding: 0;
+  }
+
+  .earth-focus {
+    border: none;
+    color: var(--earth-color);
+    padding: 0;
+  }
+
+  .mars-focus {
+    border: none;
+    color: var(--mars-color);
+    padding: 0;
+  }
+
+  .jupiter-focus {
+    border: none;
+    color: var(--jupiter-color);
+    padding: 0;
+  }
+
+  .saturn-focus {
+    border: none;
+    color: var(--saturn-color);
+    padding: 0;
+  }
+
+  .uranus-focus {
+    border: none;
+    color: var(--uranus-color);
+    padding: 0;
+  }
+
+  .neptune-focus {
+    border: none;
+    color: var(--neptune-color);
+    padding: 0;
+  }
+
+  /* ---------------Main part design---------------*/
+  .container {
+    width: 85%;
+    margin: 10.42em auto 0 auto;
+  }
+
+  .primary_section {
+    flex-direction: column;
+    max-height: none;
+    min-height: none;
+  }
+
+  .main-info {
+    display: flex;
+    flex-basis: auto;
+    max-width: none;
+    margin-left: 0;
+    margin-top: 6.785em;
+    justify-content: space-between;
+  }
+
+  .section__info--text {
+    max-width: 339px;
+    margin-right: 1em;
+  }
+
+  .section__info--text_content {
+    line-height: 22px;
+    margin-top: 1.714em;
+    margin-bottom: 1.285em;
+  }
+
+  .section__info--source {
+    margin-top: 0;
+    margin-bottom: 0;
+    opacity: 0.5;
+    font-weight: 700;
+    line-height: 25px;
+    letter-spacing: 1.3px;
+    display: flex;
+  }
+
+  .section__info--buttons {
+    min-width: 281px;
+    align-self: center;
+  }
+
+  .section-button {
+    min-height: 40px;
+    align-items: center;
+  }
+
+  .secondary_section {
+    margin: 0.92em 0 2.57em 0;
+  }
+
+  .additional-info__element {
+    min-width: 164px;
+    margin: 1em 0 0 0;
+    padding-top: 1.142em;
+    padding-bottom: 1.357em;
+    padding-left: 1.07em;
+  }
+
+  .additional-info__element h4 {
+    font-size: 0.5rem;
+    line-height: 16px;
+    letter-spacing: 0.727px;
+  }
+
+  .additional-info__element p {
+    font-size: 1.5rem;
+  }
 }
