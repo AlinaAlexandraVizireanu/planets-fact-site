@@ -1,5 +1,16 @@
 @import url("https://fonts.googleapis.com/css2?family=Antonio:wght@500&family=League+Spartan:wght@400;700&display=swap");
 
+:root {
+  --mercury-color: #419ebb;
+  --venus-color: #eda249;
+  --earth-color: #6f2ed6;
+  --mars-color: #d14c32;
+  --jupiter-color: #d83a34;
+  --saturn-color: #cd5120;
+  --uranus-color: #1ec2a4;
+  --neptune-color: #2d68f0;
+}
+
 * {
   box-sizing: border-box;
 }
@@ -65,31 +76,135 @@ header {
   text-transform: uppercase;
 }
 
+.mercury:hover {
+  opacity: 1;
+  cursor: pointer;
+  color: var(--mercury-color);
+}
+
+.mercury-focus {
+  opacity: 1;
+  border-top: 4px solid var(--mercury-color);
+  padding-top: 2.2em;
+}
+
+.venus:hover {
+  opacity: 1;
+  cursor: pointer;
+  color: var(--venus-color);
+}
+
+.venus-focus {
+  opacity: 1;
+  border-top: 4px solid var(--venus-color);
+  padding-top: 2.2em;
+}
+
+.earth:hover {
+  opacity: 1;
+  cursor: pointer;
+  color: var(--earth-color);
+}
+
+.earth-focus {
+  opacity: 1;
+  border-top: 4px solid var(--earth-color);
+  padding-top: 2.2em;
+}
+
+.mars:hover {
+  opacity: 1;
+  cursor: pointer;
+  color: var(--mars-color);
+}
+
+.mars-focus {
+  opacity: 1;
+  border-top: 4px solid var(--mars-color);
+  padding-top: 2.2em;
+}
+
+.jupiter:hover {
+  opacity: 1;
+  cursor: pointer;
+  color: var(--jupiter-color);
+}
+
+.jupiter-focus {
+  opacity: 1;
+  border-top: 4px solid var(--jupiter-color);
+  padding-top: 2.2em;
+}
+
+.saturn:hover {
+  opacity: 1;
+  cursor: pointer;
+  color: var(--saturn-color);
+}
+
+.saturn-focus {
+  opacity: 1;
+  border-top: 4px solid var(--saturn-color);
+  padding-top: 2.2em;
+}
+
+.uranus:hover {
+  opacity: 1;
+  cursor: pointer;
+  color: var(--uranus-color);
+}
+
+.uranus-focus {
+  opacity: 1;
+  border-top: 4px solid var(--uranus-color);
+  padding-top: 2.2em;
+}
+
+.neptune:hover {
+  opacity: 1;
+  cursor: pointer;
+  color: var(--neptune-color);
+}
+
+.neptune-focus {
+  opacity: 1;
+  border-top: 4px solid var(--neptune-color);
+  padding-top: 2.2em;
+}
+
 /* ---------------Main part design---------------*/
 
 .container {
   width: 85%;
-  min-height: 85vh;
-  margin: 0 auto;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
+  margin: 15.14em auto 0 auto;
 }
 
 .primary_section {
   justify-content: space-between;
   margin: auto 0;
+  max-height: 481.56px;
+  min-height: 481.56px;
 }
 
 .main-info {
   flex-basis: 40%;
-  min-height: 400px;
   max-width: 350px;
+  margin-left: 1.5em;
 }
 
 .image-container {
   margin: 0 auto;
   align-self: center;
+  position: relative;
+}
+
+.surface_geology-image {
+  width: 163px;
+  height: 199px;
+  position: absolute;
+  left: 50%;
+  bottom: 0;
+  transform: translate(-50%, 30%);
 }
 
 .section__info--title {
@@ -151,8 +266,17 @@ img.icon-source {
   margin-bottom: 1.33em;
 }
 
+.overview-hover:hover,
+.internal-hover:hover,
+.surface-hover:hover {
+  cursor: pointer;
+  background-color: rgba(216, 216, 216, 0.2);
+}
+
 .secondary_section {
   justify-content: space-between;
+  flex-wrap: wrap;
+  margin: 6.21em 0 4em 0;
 }
 
 .additional-info__element {
@@ -162,6 +286,7 @@ img.icon-source {
   padding-bottom: 1.92em;
   padding-left: 1.642em;
   min-width: 255px;
+  margin: 1em 1em;
 }
 
 .additional-info__element h4 {
