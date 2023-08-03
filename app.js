@@ -8,6 +8,8 @@ const revolution = document.querySelector(".revolution_text");
 const radius = document.querySelector(".radius_text");
 const temperature = document.querySelector(".temperature_text");
 const headerButtons = document.querySelectorAll(".nav__link");
+const navList = document.querySelector(".nav__list");
+const menuButton = document.querySelector(".hamburger_menu");
 const sectionInfoButtons = document.querySelectorAll(".section-button");
 const rootStyles = getComputedStyle(document.documentElement);
 const surfaceGeologyImg = document.createElement("img");
@@ -168,6 +170,10 @@ function displayPlanetsData(planet) {
   );
 }
 
+menuButton.addEventListener("click", function () {
+  navList.classList.toggle("nav__list-active");
+});
+
 function removeFocusClass() {
   headerButtons.forEach((button) => {
     button.classList.remove("mercury-focus");
@@ -196,7 +202,7 @@ function positionSurfaceGeologyImg(planets, planet) {
     surfaceGeologyImg.style.transform = "translate(-50%, -10%)";
   } else if (planet === "SATURN") {
     surfaceGeologyImg.style.transform = "translate(-50%, -35%)";
-  } else{
+  } else {
     surfaceGeologyImg.style.transform = "translate(-50%, 30%)";
   }
   surfaceGeologyImg.src = data[planets.indexOf(planet)].images.geology;

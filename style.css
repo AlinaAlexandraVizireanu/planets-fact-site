@@ -58,6 +58,15 @@ header {
   margin: 0;
 }
 
+.hamburger_menu {
+  display: none;
+}
+
+.circle,
+.arrow {
+  display: none;
+}
+
 .nav {
   align-self: center;
 }
@@ -74,6 +83,10 @@ header {
   opacity: 0.75;
   color: #fff;
   text-transform: uppercase;
+}
+
+.nav__link-title{
+  display: inline;
 }
 
 .mercury:hover {
@@ -435,5 +448,71 @@ img.icon-source {
 
   .additional-info__element p {
     font-size: 1.5rem;
+  }
+}
+
+@media (max-width: 600px) {
+  /* ---------------Header part design---------------*/
+  .header__content {
+    flex-direction: row;
+    margin: 1.14em 1.71em;
+  }
+
+  .header__title {
+    margin: 0;
+  }
+
+  .hamburger_menu {
+    display: block;
+    width: 24px;
+    height: 17px;
+    align-self: center;
+  }
+
+  .nav {
+    position: absolute;
+    top: 113px;
+    z-index: 1;
+    width: 90%;
+    background-color: #070724;
+    background-image: url("./assets/background-stars.svg");
+  }
+
+  .nav__list {
+    display: none;
+  }
+
+  .nav__list-active {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .nav__list li {
+    display: flex;
+    justify-content: space-between;
+  }
+
+  .nav__link {
+    display: flex;
+    font-size: 15px;
+  }
+
+  .nav__link-title{
+    align-self: center;
+  }
+
+  .circle {
+    display: block;
+    width: 20px;
+    height: 20px;
+    background-color: #def4fc;
+    border-radius: 50%;
+  }
+
+  .arrow {
+    display: block;
+    width: 4px;
+    height: 8px;
+    align-self: center;
   }
 }
