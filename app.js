@@ -172,6 +172,7 @@ function displayPlanetsData(planet) {
 
 menuButton.addEventListener("click", function () {
   navList.classList.toggle("nav__list-active");
+  menuButton.classList.toggle("hamburger_menu-opacity");
 });
 
 function removeFocusClass() {

@@ -62,7 +62,14 @@ header {
   display: none;
 }
 
-.circle,
+.circle-mercury,
+.circle-venus,
+.circle-earth,
+.circle-mars,
+.circle-jupiter,
+.circle-saturn,
+.circle-uranus,
+.circle-neptune,
 .arrow {
   display: none;
 }
@@ -85,7 +92,8 @@ header {
   text-transform: uppercase;
 }
 
-.nav__link-title{
+.nav__link-box-one,
+.nav__link-title {
   display: inline;
 }
 
@@ -482,31 +490,79 @@ img.icon-source {
     display: none;
   }
 
+  .nav__list li {
+    border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+    padding-bottom: 1.43em;
+  }
+
+  .nav__list li:last-child{
+    border: none;
+  }
+
   .nav__list-active {
     display: flex;
     flex-direction: column;
   }
 
-  .nav__list li {
+  .nav__link {
     display: flex;
+    font-size: 0.938rem;
     justify-content: space-between;
   }
 
-  .nav__link {
+  .nav__link-box-one {
     display: flex;
-    font-size: 15px;
+    gap: 15px;
   }
 
-  .nav__link-title{
+  .nav__link-title {
     align-self: center;
   }
 
-  .circle {
+  .circle-mercury,
+  .circle-venus,
+  .circle-earth,
+  .circle-mars,
+  .circle-jupiter,
+  .circle-saturn,
+  .circle-uranus,
+  .circle-neptune {
     display: block;
     width: 20px;
     height: 20px;
-    background-color: #def4fc;
     border-radius: 50%;
+  }
+
+  .circle-mercury {
+    background-color: #def4fc;
+  }
+
+  .circle-venus {
+    background-color: #f7cc7f;
+  }
+
+  .circle-earth {
+    background-color: #545bfe;
+  }
+
+  .circle-mars {
+    background-color: #ff6a45;
+  }
+
+  .circle-jupiter {
+    background-color: #ecad7a;
+  }
+
+  .circle-saturn {
+    background-color: #fccb6b;
+  }
+
+  .circle-uranus {
+    background-color: #65f0d5;
+  }
+
+  .circle-neptune {
+    background-color: #497efa;
   }
 
   .arrow {
@@ -514,5 +570,9 @@ img.icon-source {
     width: 4px;
     height: 8px;
     align-self: center;
+  }
+
+  .hamburger_menu-opacity{
+    opacity: 0.2;
   }
 }
