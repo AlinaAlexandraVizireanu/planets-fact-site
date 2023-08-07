@@ -479,15 +479,19 @@ img.icon-source {
 
   .nav {
     position: absolute;
-    top: 113px;
+    top: 69px;
+    left: 0;
     z-index: 1;
-    width: 90%;
+    width: 100%;
     background-color: #070724;
     background-image: url("./assets/background-stars.svg");
   }
 
   .nav__list {
     display: none;
+    gap: 20px;
+    width: 90%;
+    margin: 0 auto;
   }
 
   .nav__list li {
@@ -495,7 +499,11 @@ img.icon-source {
     padding-bottom: 1.43em;
   }
 
-  .nav__list li:last-child{
+  .nav__list li:first-child {
+    margin-top: 20px;
+  }
+
+  .nav__list li:last-child {
     border: none;
   }
 
@@ -572,7 +580,36 @@ img.icon-source {
     align-self: center;
   }
 
-  .hamburger_menu-opacity{
+  .hamburger_menu-opacity {
     opacity: 0.2;
+  }
+
+  /* ---------------Main part design---------------*/
+  .container{
+    margin-top: 3.20em;
+  }
+
+  .section__info--buttons{
+    flex-direction: row;
+    position: absolute;
+    top: 69px;
+    left: 0;
+    width: 100%;
+    justify-content: space-around;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+  }
+
+  .section-button{
+    font-size: 0.563rem;
+    border: 0;
+    margin: 0;
+  }
+
+  .number{
+    display: none;
+  }
+
+  p.button_text{
+    margin: 0;
   }
 }
