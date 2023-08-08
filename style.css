@@ -586,7 +586,7 @@ img.icon-source {
 
   /* ---------------Main part design---------------*/
   .container{
-    margin-top: 3.20em;
+    margin-top: 2.857em;
   }
 
   .section__info--buttons{
@@ -619,6 +619,7 @@ img.icon-source {
     align-items: center;
     min-width: 256px;
     min-height: 256px;
+    margin-top: 1.857em;
   }
 
   .mercury-image{
