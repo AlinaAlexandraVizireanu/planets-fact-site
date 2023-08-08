@@ -612,4 +612,48 @@ img.icon-source {
   p.button_text{
     margin: 0;
   }
+
+  .image-container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-width: 256px;
+    min-height: 256px;
+  }
+
+  .mercury-image{
+    width: 111px;
+    height: 111px;
+  }
+
+  .venus-image{
+    width: 154px;
+    height: 154px;
+  }
+
+  .earth-image, .neptune-image{
+    width: 173px;
+    height: 173px;
+  }
+
+  .mars-image{
+    width: 129px;
+    height: 129px;
+  }
+
+  .jupiter-image{
+    width: 224px;
+    height: 224px;
+  }
+
+  .saturn-image{
+    width: 256px;
+    height: 256px;
+  }
+
+  .uranus-image{
+    width: 176px;
+    height: 176px;
+  }
+
 }

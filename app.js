@@ -30,49 +30,49 @@ headerButtons.forEach((button) => {
   button.addEventListener("click", function () {
     switch (button.innerText) {
       case "VENUS":
-        removeFocusClass();
+        removeClasses();
         removeBackgroundColor();
         removeSurfaceGeologyImg();
         displayPlanetsData("VENUS");
         break;
       case "EARTH":
-        removeFocusClass();
+        removeClasses();
         removeBackgroundColor();
         removeSurfaceGeologyImg();
         displayPlanetsData("EARTH");
         break;
       case "MARS":
-        removeFocusClass();
+        removeClasses();
         removeBackgroundColor();
         removeSurfaceGeologyImg();
         displayPlanetsData("MARS");
         break;
       case "JUPITER":
-        removeFocusClass();
+        removeClasses();
         removeBackgroundColor();
         removeSurfaceGeologyImg();
         displayPlanetsData("JUPITER");
         break;
       case "SATURN":
-        removeFocusClass();
+        removeClasses();
         removeBackgroundColor();
         removeSurfaceGeologyImg();
         displayPlanetsData("SATURN");
         break;
       case "URANUS":
-        removeFocusClass();
+        removeClasses();
         removeBackgroundColor();
         removeSurfaceGeologyImg();
         displayPlanetsData("URANUS");
         break;
       case "NEPTUNE":
-        removeFocusClass();
+        removeClasses();
         removeBackgroundColor();
         removeSurfaceGeologyImg();
         displayPlanetsData("NEPTUNE");
         break;
       default:
-        removeFocusClass();
+        removeClasses();
         removeBackgroundColor();
         removeSurfaceGeologyImg();
         displayPlanetsData("MERCURY");
@@ -147,7 +147,7 @@ function displayPlanetsData(planet) {
   // -------Display the main image---------
   mainImage.src = data[planets.indexOf(planet)].images.planet;
   mainImage.alt = `planet ${planet}`;
-
+  mainImage.classList.add(`${planet.toLowerCase()}-image`);
   // -------Display the main text---------
   mainTitle.innerText = data[planets.indexOf(planet)].name;
   mainText.innerText = data[planets.indexOf(planet)].overview.content;
@@ -175,7 +175,7 @@ menuButton.addEventListener("click", function () {
   menuButton.classList.toggle("hamburger_menu-opacity");
 });
 
-function removeFocusClass() {
+function removeClasses() {
   headerButtons.forEach((button) => {
     button.classList.remove("mercury-focus");
     button.classList.remove("venus-focus");
@@ -186,6 +186,14 @@ function removeFocusClass() {
     button.classList.remove("uranus-focus");
     button.classList.remove("neptune-focus");
   });
+  mainImage.classList.remove("mercury-image");
+  mainImage.classList.remove("venus-image");
+  mainImage.classList.remove("earth-image");
+  mainImage.classList.remove("mars-image");
+  mainImage.classList.remove("jupiter-image");
+  mainImage.classList.remove("saturn-image");
+  mainImage.classList.remove("uranus-image");
+  mainImage.classList.remove("neptune-image");
 }
 
 function removeBackgroundColor() {
