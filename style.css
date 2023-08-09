@@ -387,7 +387,7 @@ img.icon-source {
   /* ---------------Main part design---------------*/
   .container {
     width: 85%;
-    margin: 10.42em auto 0 auto;
+    margin: 1.92em auto 0 auto;
   }
 
   .primary_section {
@@ -396,12 +396,60 @@ img.icon-source {
     min-height: none;
   }
 
+  .image-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-width: 422px;
+    min-height: 422px;
+  }
+
+  .mercury-image {
+    width: 184px;
+    height: 184px;
+  }
+
+  .venus-image {
+    width: 253px;
+    height: 253px;
+  }
+
+  .earth-image {
+    width: 285px;
+    height: 285px;
+  }
+
+  .mars-image {
+    width: 213px;
+    height: 213px;
+  }
+
+  .jupiter-image {
+    width: 369px;
+    height: 369px;
+  }
+
+  .saturn-image {
+    width: 422px;
+    height: 422px;
+  }
+
+  .uranus-image {
+    width: 290px;
+    height: 290px;
+  }
+
+  .neptune-image {
+    width: 285px;
+    height: 285px;
+  }
+
   .main-info {
     display: flex;
     flex-basis: auto;
     max-width: none;
     margin-left: 0;
-    margin-top: 6.785em;
+    margin-top: 0.78em;
     justify-content: space-between;
   }
 
@@ -699,11 +747,11 @@ img.icon-source {
     margin-top: 0;
   }
 
-  .additional-info__element h4{
+  .additional-info__element h4 {
     align-self: center;
   }
 
-  .additional-info__element p{
+  .additional-info__element p {
     font-size: 1.25rem;
   }
 }
