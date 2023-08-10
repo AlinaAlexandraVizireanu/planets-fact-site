@@ -13,13 +13,12 @@ const menuButton = document.querySelector(".hamburger_menu");
 const sectionInfoButtons = document.querySelectorAll(".section-button");
 const rootStyles = getComputedStyle(document.documentElement);
 const surfaceGeologyImg = document.createElement("img");
+let currentWidth = window.innerWidth;
 let data = null;
-let currentWidth = null;
 
 axios
   .get("data.json")
   .then((response) => {
-    console.log(response.data);
     data = response.data;
     displayPlanetsData("EARTH");
   })
@@ -29,6 +28,8 @@ axios
 
 window.addEventListener("resize", function () {
   currentWidth = window.innerWidth;
+  removeStyle();
+  sectionInfoButtonsStyle(mainTitle.innerText);
 });
 
 headerButtons.forEach((button) => {
@@ -217,29 +218,31 @@ function positionSurfaceGeologyImg(planets, planet) {
 }
 
 function sectionInfoButtonsStyle(planet) {
-  console.log(planet);
   let colorButton = rootStyles.getPropertyValue(
     `--${planet.toLowerCase()}-color`
   );
   if (currentWidth <= 600) {
     sectionInfoButtons[0].style.borderBottom = `4px solid ${colorButton}`;
+    sectionInfoButtons[0].style.backgroundColor = "transparent";
   } else {
     sectionInfoButtons[0].style.backgroundColor = colorButton;
   }
   sectionInfoButtons.forEach((button) => {
-    let spaceIndex = button.innerText.indexOf(" ");
-    let initialText = button.innerText;
+    let children = button.children;
+    let spaceIndex = children[1].innerText.indexOf(" ");
+    let initialText = children[1].innerText;
 
     if (currentWidth <= 600 && spaceIndex !== -1) {
-      button.innerText = button.innerText.slice(spaceIndex + 1);
+      children[1].innerText = children[1].innerText.slice(spaceIndex + 1);
     } else {
-      button.innerText = initialText;
+      children[1].innerText = initialText;
     }
 
     button.addEventListener("click", function () {
       removeStyle();
       if (currentWidth <= 600) {
         button.style.borderBottom = `4px solid ${colorButton}`;
+        button.style.backgroundColor = "transparent";
       } else {
         button.style.backgroundColor = colorButton;
       }
