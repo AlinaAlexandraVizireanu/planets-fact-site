@@ -14,6 +14,7 @@ const sectionInfoButtons = document.querySelectorAll(".section-button");
 const rootStyles = getComputedStyle(document.documentElement);
 const surfaceGeologyImg = document.createElement("img");
 let data = null;
+let currentWidth = null;
 
 axios
   .get("data.json")
@@ -25,6 +26,10 @@ axios
   .catch((err) => {
     console.log(err);
   });
+
+window.addEventListener("resize", function () {
+  currentWidth = window.innerWidth;
+});
 
 headerButtons.forEach((button) => {
   button.addEventListener("click", function () {
@@ -107,9 +112,11 @@ function displayPlanetsData(planet) {
 
           // -------Add background color for button---------
           removeBackgroundColor();
-          button.style.backgroundColor = rootStyles.getPropertyValue(
-            `--${planet.toLowerCase()}-color`
-          );
+          sectionInfoButtonsStyle(planet);
+          // button.style.backgroundColor = rootStyles.getPropertyValue(
+          //   `--${planet.toLowerCase()}-color`
+          // );
+          
           break;
         case "surface":
           // -------Display the surface geology image---------
@@ -122,9 +129,10 @@ function displayPlanetsData(planet) {
 
           // ------Add background color for button---------
           removeBackgroundColor();
-          button.style.backgroundColor = rootStyles.getPropertyValue(
-            `--${planet.toLowerCase()}-color`
-          );
+          sectionInfoButtonsStyle(planet);
+          // button.style.backgroundColor = rootStyles.getPropertyValue(
+          //   `--${planet.toLowerCase()}-color`
+          // );
           break;
         default:
           // -------Display the main image---------
@@ -138,9 +146,10 @@ function displayPlanetsData(planet) {
 
           // -------Add background color for button---------
           removeBackgroundColor();
-          button.style.backgroundColor = rootStyles.getPropertyValue(
-            `--${planet.toLowerCase()}-color`
-          );
+          sectionInfoButtonsStyle(planet);
+          // button.style.backgroundColor = rootStyles.getPropertyValue(
+          //   `--${planet.toLowerCase()}-color`
+          // );
       }
     });
   });
@@ -165,9 +174,10 @@ function displayPlanetsData(planet) {
   );
 
   // ------Add background color for overview button---------
-  sectionInfoButtons[0].style.backgroundColor = rootStyles.getPropertyValue(
-    `--${planet.toLowerCase()}-color`
-  );
+  // sectionInfoButtons[0].style.backgroundColor = rootStyles.getPropertyValue(
+  //   `--${planet.toLowerCase()}-color`
+  // );
+  sectionInfoButtonsStyle(planet);
 }
 
 menuButton.addEventListener("click", function () {
@@ -218,4 +228,26 @@ function positionSurfaceGeologyImg(planets, planet) {
   mainImage.alt = `geology of planet ${planet}`;
   surfaceGeologyImg.classList.add("surface_geology-image");
   imageContainer.appendChild(surfaceGeologyImg);
+}
+
+function sectionInfoButtonsStyle(planet) {
+  sectionInfoButtons.forEach((button) => {
+    let spaceIndex = button.innerText.indexOf(" ");
+    if (currentWidth <= 600) {
+      if (spaceIndex !== -1) {
+        button.innerText = button.innerText.slice(spaceIndex + 1);
+      }
+    }
+
+    button.addEventListener("click", function () {
+      if (currentWidth <= 600) {
+        removeBackgroundColor();
+        button.style.borderBottom = `4px solid red`;
+      } else {
+        button.style.backgroundColor = rootStyles.getPropertyValue(
+          `--${planet.toLowerCase()}-color`
+        );
+      }
+    });
+  });
 }
