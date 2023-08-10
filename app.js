@@ -36,49 +36,49 @@ headerButtons.forEach((button) => {
     switch (button.innerText) {
       case "VENUS":
         removeClasses();
-        removeBackgroundColor();
+        removeStyle();
         removeSurfaceGeologyImg();
         displayPlanetsData("VENUS");
         break;
       case "EARTH":
         removeClasses();
-        removeBackgroundColor();
+        removeStyle();
         removeSurfaceGeologyImg();
         displayPlanetsData("EARTH");
         break;
       case "MARS":
         removeClasses();
-        removeBackgroundColor();
+        removeStyle();
         removeSurfaceGeologyImg();
         displayPlanetsData("MARS");
         break;
       case "JUPITER":
         removeClasses();
-        removeBackgroundColor();
+        removeStyle();
         removeSurfaceGeologyImg();
         displayPlanetsData("JUPITER");
         break;
       case "SATURN":
         removeClasses();
-        removeBackgroundColor();
+        removeStyle();
         removeSurfaceGeologyImg();
         displayPlanetsData("SATURN");
         break;
       case "URANUS":
         removeClasses();
-        removeBackgroundColor();
+        removeStyle();
         removeSurfaceGeologyImg();
         displayPlanetsData("URANUS");
         break;
       case "NEPTUNE":
         removeClasses();
-        removeBackgroundColor();
+        removeStyle();
         removeSurfaceGeologyImg();
         displayPlanetsData("NEPTUNE");
         break;
       default:
         removeClasses();
-        removeBackgroundColor();
+        removeStyle();
         removeSurfaceGeologyImg();
         displayPlanetsData("MERCURY");
     }
@@ -110,13 +110,8 @@ function displayPlanetsData(planet) {
           mainText.innerText = data[planets.indexOf(planet)].structure.content;
           source.href = data[planets.indexOf(planet)].structure.source;
 
-          // -------Add background color for button---------
-          removeBackgroundColor();
+          // -------Add style for button---------
           sectionInfoButtonsStyle(planet);
-          // button.style.backgroundColor = rootStyles.getPropertyValue(
-          //   `--${planet.toLowerCase()}-color`
-          // );
-          
           break;
         case "surface":
           // -------Display the surface geology image---------
@@ -127,12 +122,8 @@ function displayPlanetsData(planet) {
           mainText.innerText = data[planets.indexOf(planet)].geology.content;
           source.href = data[planets.indexOf(planet)].geology.source;
 
-          // ------Add background color for button---------
-          removeBackgroundColor();
+          // ------Add style for button---------
           sectionInfoButtonsStyle(planet);
-          // button.style.backgroundColor = rootStyles.getPropertyValue(
-          //   `--${planet.toLowerCase()}-color`
-          // );
           break;
         default:
           // -------Display the main image---------
@@ -144,12 +135,8 @@ function displayPlanetsData(planet) {
           mainText.innerText = data[planets.indexOf(planet)].overview.content;
           source.href = data[planets.indexOf(planet)].overview.source;
 
-          // -------Add background color for button---------
-          removeBackgroundColor();
+          // -------Add style for button---------
           sectionInfoButtonsStyle(planet);
-          // button.style.backgroundColor = rootStyles.getPropertyValue(
-          //   `--${planet.toLowerCase()}-color`
-          // );
       }
     });
   });
@@ -157,6 +144,7 @@ function displayPlanetsData(planet) {
   mainImage.src = data[planets.indexOf(planet)].images.planet;
   mainImage.alt = `planet ${planet}`;
   mainImage.classList.add(`${planet.toLowerCase()}-image`);
+
   // -------Display the main text---------
   mainTitle.innerText = data[planets.indexOf(planet)].name;
   mainText.innerText = data[planets.indexOf(planet)].overview.content;
@@ -173,10 +161,7 @@ function displayPlanetsData(planet) {
     `${planet.toLowerCase()}-focus`
   );
 
-  // ------Add background color for overview button---------
-  // sectionInfoButtons[0].style.backgroundColor = rootStyles.getPropertyValue(
-  //   `--${planet.toLowerCase()}-color`
-  // );
+  // ------Add style for overview button---------
   sectionInfoButtonsStyle(planet);
 }
 
@@ -206,9 +191,10 @@ function removeClasses() {
   mainImage.classList.remove("neptune-image");
 }
 
-function removeBackgroundColor() {
+function removeStyle() {
   sectionInfoButtons.forEach((button) => {
     button.style.backgroundColor = "";
+    button.style.borderBottom = "";
   });
 }
 
@@ -231,22 +217,31 @@ function positionSurfaceGeologyImg(planets, planet) {
 }
 
 function sectionInfoButtonsStyle(planet) {
+  console.log(planet);
+  let colorButton = rootStyles.getPropertyValue(
+    `--${planet.toLowerCase()}-color`
+  );
+  if (currentWidth <= 600) {
+    sectionInfoButtons[0].style.borderBottom = `4px solid ${colorButton}`;
+  } else {
+    sectionInfoButtons[0].style.backgroundColor = colorButton;
+  }
   sectionInfoButtons.forEach((button) => {
     let spaceIndex = button.innerText.indexOf(" ");
-    if (currentWidth <= 600) {
-      if (spaceIndex !== -1) {
-        button.innerText = button.innerText.slice(spaceIndex + 1);
-      }
+    let initialText = button.innerText;
+
+    if (currentWidth <= 600 && spaceIndex !== -1) {
+      button.innerText = button.innerText.slice(spaceIndex + 1);
+    } else {
+      button.innerText = initialText;
     }
 
     button.addEventListener("click", function () {
+      removeStyle();
       if (currentWidth <= 600) {
-        removeBackgroundColor();
-        button.style.borderBottom = `4px solid red`;
+        button.style.borderBottom = `4px solid ${colorButton}`;
       } else {
-        button.style.backgroundColor = rootStyles.getPropertyValue(
-          `--${planet.toLowerCase()}-color`
-        );
+        button.style.backgroundColor = colorButton;
       }
     });
   });
