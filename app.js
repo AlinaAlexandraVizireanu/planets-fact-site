@@ -11,6 +11,7 @@ const headerButtons = document.querySelectorAll(".nav__link");
 const navList = document.querySelector(".nav__list");
 const menuButton = document.querySelector(".hamburger_menu");
 const sectionInfoButtons = document.querySelectorAll(".section-button");
+const sectionInfoButtonsText = document.querySelectorAll(".button_text");
 const rootStyles = getComputedStyle(document.documentElement);
 const surfaceGeologyImg = document.createElement("img");
 let currentWidth = window.innerWidth;
@@ -230,12 +231,12 @@ function sectionInfoButtonsStyle(planet) {
   sectionInfoButtons.forEach((button) => {
     let children = button.children;
     let spaceIndex = children[1].innerText.indexOf(" ");
-    let initialText = children[1].innerText;
 
     if (currentWidth <= 600 && spaceIndex !== -1) {
       children[1].innerText = children[1].innerText.slice(spaceIndex + 1);
     } else {
-      children[1].innerText = initialText;
+      sectionInfoButtonsText[1].innerText = "INTERNAL STRUCTURE";
+      sectionInfoButtonsText[2].innerText = "SURFACE GEOLOGY";
     }
 
     button.addEventListener("click", function () {
