@@ -195,7 +195,7 @@ function removeClasses() {
 
 function removeStyle() {
   sectionInfoButtons.forEach((button) => {
-    button.style.backgroundColor = "";
+    button.style.backgroundColor = "transparent";
     button.style.borderBottom = "";
   });
 }
@@ -222,12 +222,33 @@ function sectionInfoButtonsStyle(planet) {
   let colorButton = rootStyles.getPropertyValue(
     `--${planet.toLowerCase()}-color`
   );
-  if (currentWidth <= 600) {
-    sectionInfoButtons[0].style.borderBottom = `4px solid ${colorButton}`;
-    sectionInfoButtons[0].style.backgroundColor = "transparent";
-  } else {
-    sectionInfoButtons[0].style.backgroundColor = colorButton;
+
+  switch (mainImage.alt.split(" ")[0]) {
+    case "internal":
+      if (currentWidth <= 600) {
+        sectionInfoButtons[1].style.borderBottom = `4px solid ${colorButton}`;
+        sectionInfoButtons[1].style.backgroundColor = "transparent";
+      } else {
+        sectionInfoButtons[1].style.backgroundColor = colorButton;
+      }
+      break;
+    case "geology":
+      if (currentWidth <= 600) {
+        sectionInfoButtons[2].style.borderBottom = `4px solid ${colorButton}`;
+        sectionInfoButtons[2].style.backgroundColor = "transparent";
+      } else {
+        sectionInfoButtons[2].style.backgroundColor = colorButton;
+      }
+      break;
+    default:
+      if (currentWidth <= 600) {
+        sectionInfoButtons[0].style.borderBottom = `4px solid ${colorButton}`;
+        sectionInfoButtons[0].style.backgroundColor = "transparent";
+      } else {
+        sectionInfoButtons[0].style.backgroundColor = colorButton;
+      }
   }
+
   sectionInfoButtons.forEach((button) => {
     let children = button.children;
     let spaceIndex = children[1].innerText.indexOf(" ");
