@@ -225,7 +225,6 @@ header {
   position: absolute;
   left: 50%;
   bottom: 0;
-  transform: translate(-50%, 30%);
 }
 
 .section__info--title {
@@ -402,6 +401,14 @@ img.icon-source {
     align-items: center;
     min-width: 422px;
     min-height: 422px;
+  }
+
+  .surface_geology-image {
+    width: 133px;
+    height: 159px;
+    position: absolute;
+    left: 50%;
+    bottom: 0;
   }
 
   .mercury-image {
@@ -668,6 +675,14 @@ img.icon-source {
     min-width: 256px;
     min-height: 256px;
     margin-top: 1.857em;
+  }
+
+  .surface_geology-image {
+    width: 113px;
+    height: 135px;
+    position: absolute;
+    left: 50%;
+    bottom: 0;
   }
 
   .mercury-image {
