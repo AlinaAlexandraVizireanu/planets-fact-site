@@ -27,17 +27,17 @@ Users should be able to:
 
 ### Screenshot
 
-Desktop Version
+#### Desktop Version
 
 ![](./screenshots/DesktopVersion.jpg)
 
-Tablet Version
+#### Tablet Version
 
 ![](./screenshots/TabletVersion.jpg)
 
-Mobile Version
+#### Mobile Version
 
-![](./screenshots/TabletVersion.jpg)
+![](./screenshots/MobileVersion.jpg)
 
 ### Links
 
@@ -59,7 +59,7 @@ I started this project by checking the design on the Figma file, then I created 
 
 ### What I learned
 
-In the process of building this project I've used mostly Flexbox for positioning which helped me to deepen my knowledge regarding positioning with Flexbox.
+In the process of building this project, I've used mostly Flexbox for positioning which helped me to deepen my knowledge regarding positioning with Flexbox.
 While I was implementing the logic part I also deepened my JavaScript skills and I also improved my skills working with Axios.
 
 ## Author
