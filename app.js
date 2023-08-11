@@ -31,6 +31,7 @@ window.addEventListener("resize", function () {
   currentWidth = window.innerWidth;
   removeStyle();
   sectionInfoButtonsStyle(mainTitle.innerText);
+  positionImg(mainTitle.innerText);
 });
 
 headerButtons.forEach((button) => {
@@ -205,17 +206,35 @@ function removeSurfaceGeologyImg() {
 }
 
 function positionSurfaceGeologyImg(planets, planet) {
-  if (planet === "JUPITER") {
-    surfaceGeologyImg.style.transform = "translate(-50%, -10%)";
-  } else if (planet === "SATURN") {
-    surfaceGeologyImg.style.transform = "translate(-50%, -35%)";
-  } else {
-    surfaceGeologyImg.style.transform = "translate(-50%, 30%)";
-  }
+  positionImg(planet);
   surfaceGeologyImg.src = data[planets.indexOf(planet)].images.geology;
   mainImage.alt = `geology of planet ${planet}`;
   surfaceGeologyImg.classList.add("surface_geology-image");
   imageContainer.appendChild(surfaceGeologyImg);
+}
+
+function positionImg(planet) {
+  if (planet === "JUPITER") {
+    if (currentWidth <= 600) {
+      surfaceGeologyImg.style.transform = "translate(-50%, 10%)";
+    } else {
+      surfaceGeologyImg.style.transform = "translate(-50%, -10%)";
+    }
+  } else if (planet === "SATURN") {
+    if (currentWidth <= 600) {
+      surfaceGeologyImg.style.transform = "translate(-50%, 10%)";
+    } else {
+      surfaceGeologyImg.style.transform = "translate(-50%, -35%)";
+    }
+  } else {
+    if (currentWidth <= 600) {
+      surfaceGeologyImg.style.transform = "translate(-50%, 10%)";
+    } else if (currentWidth <= 955) {
+      surfaceGeologyImg.style.transform = "translate(-50%, -27%)";
+    } else {
+      surfaceGeologyImg.style.transform = "translate(-50%, 30%)";
+    }
+  }
 }
 
 function sectionInfoButtonsStyle(planet) {
