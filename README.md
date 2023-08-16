@@ -53,7 +53,6 @@ I started this project by checking the design on the Figma file, then I created 
 - Semantic HTML5 markup
 - CSS custom properties
 - Flexbox
-- CSS Grid
 - JavaScript
 - Axios
 
