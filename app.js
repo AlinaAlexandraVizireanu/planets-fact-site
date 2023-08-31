@@ -106,7 +106,10 @@ function displayPlanetsData(planet) {
         case "internal":
           // -------Display the main image---------
           removeSurfaceGeologyImg();
-          mainImage.src = data[planets.indexOf(planet)].images.internal;
+          fadeOutImage(() => {
+            mainImage.src = data[planets.indexOf(planet)].images.internal;
+            fadeInImage();
+          });
           mainImage.alt = `internal structure of ${planet}`;
 
           // -------Display the main text---------
@@ -118,7 +121,10 @@ function displayPlanetsData(planet) {
           break;
         case "surface":
           // -------Display the surface geology image---------
-          mainImage.src = data[planets.indexOf(planet)].images.planet;
+          fadeOutImage(() => {
+            mainImage.src = data[planets.indexOf(planet)].images.planet;
+            fadeInImage();
+          });
           positionSurfaceGeologyImg(planets, planet);
 
           // -------Display the main text---------
@@ -131,7 +137,10 @@ function displayPlanetsData(planet) {
         default:
           // -------Display the main image---------
           removeSurfaceGeologyImg();
-          mainImage.src = data[planets.indexOf(planet)].images.planet;
+          fadeOutImage(() => {
+            mainImage.src = data[planets.indexOf(planet)].images.planet;
+            fadeInImage();
+          });
           mainImage.alt = `planet ${planet}`;
 
           // -------Display the main text---------
@@ -144,7 +153,10 @@ function displayPlanetsData(planet) {
     });
   });
   // -------Display the main image---------
-  mainImage.src = data[planets.indexOf(planet)].images.planet;
+  fadeOutImage(() => {
+    mainImage.src = data[planets.indexOf(planet)].images.planet;
+    fadeInImage();
+  });
   mainImage.alt = `planet ${planet}`;
   mainImage.classList.add(`${planet.toLowerCase()}-image`);
 
@@ -289,4 +301,13 @@ function sectionInfoButtonsStyle(planet) {
       }
     });
   });
+}
+
+function fadeOutImage(callback) {
+  mainImage.style.opacity = 0;
+  setTimeout(callback, 500);
+}
+
+function fadeInImage() {
+  mainImage.style.opacity = 1;
 }

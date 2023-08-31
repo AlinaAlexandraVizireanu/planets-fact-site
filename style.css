@@ -219,6 +219,10 @@ header {
   position: relative;
 }
 
+.main-image{
+  transition: opacity 2s ease;
+}
+
 .surface_geology-image {
   width: 163px;
   height: 199px;
